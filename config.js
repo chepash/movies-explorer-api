@@ -15,6 +15,8 @@ const corsOptions = {
     'http://praktikum.tk',
     'https://chepamovies.nomoredomains.monster',
   ],
+  allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
+  methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
   credentials: true,
   maxAge: 60, // 60 = 1min кэшируем одинаковые preflight options запросы на 1min
   optionsSuccessStatus: 204,
