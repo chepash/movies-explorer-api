@@ -53,7 +53,7 @@ module.exports.updateUserInfo = (req, res, next) => {
 
   return User.findByIdAndUpdate(id, {
     name: req.body.name,
-    about: req.body.about,
+    email: req.body.email,
   }, {
     new: true,
     runValidators: true,
@@ -62,7 +62,10 @@ module.exports.updateUserInfo = (req, res, next) => {
   })
     .then((user) => res.send(user))
     .catch((err) => {
-      if (err instanceof mongoose.Error.ValidationError) {
+      if (err.code === 11000) {
+        const conflictErr = new DuplicateKeyError();
+        next(conflictErr);
+      } else if (err instanceof mongoose.Error.ValidationError) {
         const validationError = new BadRequestError();
         validationError.message = err.message;
         next(validationError);
