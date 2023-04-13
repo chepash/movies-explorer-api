@@ -17,7 +17,7 @@ const {
 } = require('./config');
 
 const { appErrorHandler } = require('./middlewares/appErrorHandler');
-const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { requestLogger, errorLogger, startLogger } = require('./middlewares/logger');
 
 mongoose.connect(DB_ADDRESS, {
   useNewUrlParser: true,
@@ -39,6 +39,5 @@ app.use(celebrate.errors());
 app.use(appErrorHandler);
 
 app.listen(PORT, () => {
-  // eslint-disable-next-line no-console
-  console.log(`App listening on port ${PORT}`);
+  startLogger.info(`App listening on port ${PORT}`);
 });
