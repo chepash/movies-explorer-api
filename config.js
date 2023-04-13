@@ -5,7 +5,7 @@ const { NODE_ENV = 'development' } = process.env;
 const JWT_SECRET = NODE_ENV === 'production' ? process.env.JWT_SECRET : 'dev-secret';
 
 const { PORT = '3000' } = process.env;
-const { DB_ADDRESS = 'mongodb://127.0.0.1:27017/moviedb' } = process.env;
+const { DB_ADDRESS = 'mongodb://127.0.0.1:27017/bitfilmsdb' } = process.env;
 
 const corsOptions = {
   origin: [
