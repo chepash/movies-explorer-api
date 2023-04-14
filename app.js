@@ -28,12 +28,12 @@ mongoose.connect(DB_ADDRESS, {
 
 const app = express();
 
+app.use(requestLogger);
 app.use(rateLimit(limiterOptions));
 app.use(helmet());
 app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use(express.json());
-app.use(requestLogger);
 app.use(routes);
 app.use(errorLogger);
 app.use(celebrate.errors());
