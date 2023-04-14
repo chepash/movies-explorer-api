@@ -9,7 +9,6 @@ const WrongMovieOwnerError = require('../errors/WrongMovieOwnerError');
 
 // GET /movies
 module.exports.getMovies = (req, res, next) => Movie.find({ owner: req.user._id })
-  .sort({ createdAt: -1 })
   .then((movies) => res.send(movies))
   .catch(next);
 
