@@ -1,4 +1,10 @@
 const mongoose = require('mongoose');
+const {
+  urlRegex,
+  SCHEMA_ERR_IMAGE_URL,
+  SCHEMA_ERR_TRAILER_URL,
+  SCHEMA_ERR_THUMBNAIL_URL,
+} = require('../utils/constants');
 
 const movieSchema = new mongoose.Schema({
   country: {
@@ -24,14 +30,32 @@ const movieSchema = new mongoose.Schema({
   image: {
     type: String,
     required: true,
+    validate: {
+      validator(v) {
+        return urlRegex.test(v);
+      },
+      message: SCHEMA_ERR_IMAGE_URL,
+    },
   },
   trailerLink: {
     type: String,
     required: true,
+    validate: {
+      validator(v) {
+        return urlRegex.test(v);
+      },
+      message: SCHEMA_ERR_TRAILER_URL,
+    },
   },
   thumbnail: {
     type: String,
     required: true,
+    validate: {
+      validator(v) {
+        return urlRegex.test(v);
+      },
+      message: SCHEMA_ERR_THUMBNAIL_URL,
+    },
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
@@ -39,7 +63,7 @@ const movieSchema = new mongoose.Schema({
     required: true,
   },
   movieId: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Number,
     required: true,
   },
   nameRU: {

@@ -16,6 +16,11 @@ module.exports.ERR_MESSAGE_CONFLICT = 'User with this email already exist';
 module.exports.ERR_MESSAGE_INTERNAL_SERVER = 'General problem with the server';
 
 module.exports.SCHEMA_ERR_EMAIL = 'Email adress is not valid';
+module.exports.SCHEMA_ERR_IMAGE_URL = 'Image url is not valid';
+module.exports.SCHEMA_ERR_TRAILER_URL = 'Trailer url is not valid';
+module.exports.SCHEMA_ERR_THUMBNAIL_URL = 'Thumbnail url is not valid';
 
 module.exports.MESSAGE_SUCCESS_AUTH = 'Successful authorization';
 module.exports.MESSAGE_SUCCESS_LOGOUT = 'Logged out successfully';
+
+module.exports.urlRegex = /^https?:\/\/((www\.)|(?!www\.)).+\./i;
