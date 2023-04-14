@@ -24,3 +24,4 @@ module.exports.MESSAGE_SUCCESS_AUTH = 'Successful authorization';
 module.exports.MESSAGE_SUCCESS_LOGOUT = 'Logged out successfully';
 
 module.exports.urlRegex = /^https?:\/\/((www\.)|(?!www\.)).+\./i;
+module.exports.objectIdRegex = /^[0-9a-fA-F]{24}$/;
