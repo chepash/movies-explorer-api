@@ -14,3 +14,8 @@ module.exports.ERR_MESSAGE_NOT_FOUND = 'Document not found';
 module.exports.ERR_MESSAGE_WRONG_PAGE = 'Page not found';
 module.exports.ERR_MESSAGE_CONFLICT = 'User with this email already exist';
 module.exports.ERR_MESSAGE_INTERNAL_SERVER = 'General problem with the server';
+
+module.exports.SCHEMA_ERR_EMAIL = 'Email adress is not valid';
+
+module.exports.MESSAGE_SUCCESS_AUTH = 'Successful authorization';
+module.exports.MESSAGE_SUCCESS_LOGOUT = 'Logged out successfully';
