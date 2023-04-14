@@ -12,6 +12,7 @@ const routes = require('./routes');
 const {
   PORT,
   DB_ADDRESS,
+  NODE_ENV,
   corsOptions,
   limiterOptions,
 } = require('./config');
@@ -39,5 +40,5 @@ app.use(celebrate.errors());
 app.use(appErrorHandler);
 
 app.listen(PORT, () => {
-  startLogger.info(`App listening on port ${PORT}`);
+  startLogger.info(`App listening on port ${PORT} in ${NODE_ENV} mode`);
 });

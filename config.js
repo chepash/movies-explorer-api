@@ -36,4 +36,5 @@ module.exports = {
   DB_ADDRESS,
   corsOptions,
   limiterOptions,
+  NODE_ENV,
 };
