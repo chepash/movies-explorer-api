@@ -12,7 +12,8 @@ module.exports.ERR_MESSAGE_UNAUTHORIZED = 'User unauthorized';
 module.exports.ERR_MESSAGE_FORBIDDEN = 'User is not the owner of the movie';
 module.exports.ERR_MESSAGE_NOT_FOUND = 'Document not found';
 module.exports.ERR_MESSAGE_WRONG_PAGE = 'Page not found';
-module.exports.ERR_MESSAGE_CONFLICT = 'User with this email already exist';
+module.exports.ERR_MESSAGE_CONFLICT_EMAIL = 'User with this email already exist';
+module.exports.ERR_MESSAGE_CONFLICT_MOVIE_ID = 'Movie with this movieID is already added to favorites for this user';
 module.exports.ERR_MESSAGE_INTERNAL_SERVER = 'General problem with the server';
 
 module.exports.SCHEMA_ERR_EMAIL = 'Email adress is not valid';
