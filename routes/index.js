@@ -19,7 +19,7 @@ router.use('/movies', auth, moviesRoutes);
 
 router.post('/signout', auth, logout);
 
-router.use('*', (req, res, next) => {
+router.use('*', auth, (req, res, next) => {
   const err = new NotFoundError();
   err.message = ERR_MESSAGE_WRONG_PAGE;
   next(err);
