@@ -1,5 +1,6 @@
 const { celebrate, Joi } = require('celebrate');
 const { objectIdRegex } = require('./constants');
+const { urlRegex } = require('./constants');
 
 module.exports.validatePatchUserData = celebrate({
   body: Joi.object().keys({
@@ -30,9 +31,9 @@ module.exports.validateCreateMovieData = celebrate({
     duration: Joi.number().required(),
     year: Joi.string().required(),
     description: Joi.string().required(),
-    image: Joi.string().required(),
-    trailerLink: Joi.string().required(),
-    thumbnail: Joi.string().required(),
+    image: Joi.string().uri().regex(urlRegex).required(),
+    trailerLink: Joi.string().uri().regex(urlRegex).required(),
+    thumbnail: Joi.string().uri().regex(urlRegex).required(),
     movieId: Joi.number().required(),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
